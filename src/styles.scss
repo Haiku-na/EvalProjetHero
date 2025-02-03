@@ -96,30 +96,25 @@ button {
   color: $text-color;
   min-height: 100vh;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  input {
+    padding: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    width: 80%;
     max-width: 600px;
+    color: $text-color;
+    background-color: $background-color;
 
-    input {
-      padding: 10px;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      border: 2px solid $primary-color;
-      border-radius: 5px;
-      width: 100%;
-      color: $text-color;
-      background-color: $background-color;
-
+    &::placeholder {
+      color:$text-color;
     }
+  }
 
-    button {
-      @include hero-button($text-color, $secondary-color);
-      width: 100%;
-      margin-bottom: 20px;
-    }
+  button {
+    @include hero-button($text-color, $secondary-color);
+    margin-bottom: 20px;
   }
 
   .results {
@@ -147,7 +142,7 @@ button {
 
     p {
       font-size: 1.5rem;
-      color:$text-color;
+      color: $text-color;
       text-align: center;
       width: 100%;
     }
