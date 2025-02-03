@@ -37,7 +37,7 @@ $accent-color: #ffff00;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: darken($bg-color, 10%);
+    background-color:$bg-color;
   }
 }
 
@@ -113,9 +113,6 @@ button {
       color: $text-color;
       background-color: $background-color;
 
-      &::placeholder {
-        color: lighten($text-color, 20%);
-      }
     }
 
     button {
@@ -150,7 +147,7 @@ button {
 
     p {
       font-size: 1.5rem;
-      color: lighten($text-color, 20%);
+      color:$text-color;
       text-align: center;
       width: 100%;
     }
@@ -195,7 +192,7 @@ button {
   p {
     font-size: 1.2rem;
     margin: 5px 0;
-    color: lighten($text-color, 20%);
+    color:$text-color;
   }
 }
 
@@ -215,7 +212,7 @@ button {
 
   p {
     font-size: 1.2rem;
-    color: lighten($text-color, 20%);
+    color: $text-color; 
     margin: 0;
   }
 }
@@ -242,13 +239,39 @@ button {
     color: $text-color;
     background-color: $background-color;
 
-    &::placeholder {
-      color: lighten($text-color, 20%);
-    }
   }
 
   button {
     @include hero-button($text-color, $secondary-color);
     width: 100%;
+  }
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $background-color;
+  color: $text-color;
+  text-align: center;
+
+  h1 {
+    @include hero-text($primary-color);
+    font-size: 5rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: $text-color;
+  }
+
+  .back-home {
+    @include hero-button($text-color, $secondary-color);
+    padding: 15px 30px;
+    font-size: 1.5rem;
   }
 }

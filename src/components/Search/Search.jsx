@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
+
 import { Link } from "react-router-dom";
-import { useAuth } from "../../auth/AuthProvider";
+
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const [heroes, setHeroes] = useState([]);
-  const { user } = useAuth();
+
   const fetchHeroes = async () => {
     if (searchTerm.trim() === "") return;
 
@@ -23,20 +25,13 @@ export default function Search() {
 
   return (
     <div className="fetch-container">
-        {user ? (
-          <form action="">
-        <input
+      <input
         type="text"
         placeholder="Entrez un nom (ex: Batman)"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <button onClick={fetchHeroes}>Rechercher</button>
-      </form>
-      ) : (
-        <p>Connectez-vous pour faire une recherche</p>
-      )}
-      
 
       <div className="results">
         {heroes.length > 0 ? (

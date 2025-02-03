@@ -7,9 +7,10 @@ export default function Connect() {
   const { user } = useAuth();
     return (
         <div>
-            {user ? (
+          {user ? (
         <>
           <p>Bienvenue {user.username}</p>
+          <Logout />
         </>
       ) : (
         <Login />
