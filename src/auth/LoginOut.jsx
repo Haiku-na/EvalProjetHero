@@ -1,5 +1,6 @@
+import React, { useState } from "react";
 import { useAuth } from "./AuthProvider";
-import { useState } from "react";
+
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -12,7 +13,7 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Nom d'utilisateur"
@@ -33,7 +34,7 @@ function Login() {
 function Logout() {
   const { logout } = useAuth();
 
-  return <button onClick={logout}>Se déconnecter</button>;
+  return <button className="logout-button" onClick={logout}>Se déconnecter</button>;
 }
 
 export { Login, Logout };

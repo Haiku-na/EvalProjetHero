@@ -4,6 +4,7 @@ import { Login, Logout } from "../../auth/LoginOut";
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 export default function Header() {
   const { user } = useAuth();
 
@@ -28,17 +29,20 @@ export default function Header() {
         </a>
       )}
 
-      
+
       <h1 className="header__title">{displayName}</h1>
 
       {user ? (
         <>
           <Logout />
+          <Link to="/contact">
+            <button className="bouton">Contact</button>
+          </Link>
         </>
       ) : (
         <Link to="/connection">
-      <button className="bouton">Se connecter</button>
-      </Link>
+          <button className="bouton">Se connecter</button>
+        </Link>
       )}
     </div>
   );
